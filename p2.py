@@ -17,15 +17,21 @@ seed_low = 1
 seed_high = 2
 max_val = 4000000
 
-fib_array = [seed_low, seed_high]
-cond_array = []
-while fib_array[-1] < max_val:
-	seed_low = fib_array[-2] 
-	seed_high = fib_array[-1]
-	fib_array.append(seed_low + seed_high)
 
-#remove last term, since it will exceed max_val
-fib_array.pop()
-even_fibs = list(filter(lambda x: x/2 == x//2, fib_array))
-even_fibs_total = sum(even_fibs)
-print(even_fibs_sum)
+def find_even_fibs(seed_low, seed_high, max_val):
+	fib_array = [seed_low, seed_high]
+	cond_array = []
+	while fib_array[-1] < max_val:
+		seed_low = fib_array[-2] 
+		seed_high = fib_array[-1]
+		fib_array.append(seed_low + seed_high)
+
+	#remove last term, since it will exceed max_val
+	fib_array.pop()
+	even_fibs = list(filter(lambda x: x/2 == x//2, fib_array))
+	even_fibs_sum = sum(even_fibs)
+	print(even_fibs_sum)
+	return even_fibs_sum
+
+
+find_even_fibs(seed_low, seed_high, max_val)
