@@ -9,7 +9,7 @@ By considering the terms in the Fibonacci sequence whose values do not exceed fo
 """
 
 # Concepts used:
-# fibonacci, seed, lambda, filter
+# fibonacci, lambda, filter
 
 import numpy
 
